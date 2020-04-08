@@ -1,0 +1,177 @@
+buildscript {
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        jcenter()
+        maven { url "https://dl.bintray.com/graphql-java-kickstart/releases" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url 'https://repo.spring.io/plugins-release' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'http://uk.maven.org/maven2/' }
+        maven { url 'http://mirrors.ibiblio.org/pub/mirrors/maven2/' }
+        maven { url 'http://repository.jboss.org/nexus/content/groups/public' }
+        maven { url 'http://maven.oschina.net/content/groups/public/' }
+        maven { url 'http://maven.net.cn/content/groups/public/' }
+        maven { url 'https://repository.jboss.org/nexus/content/repositories/releases/' }
+
+        maven {
+            credentials {
+                username 'KwPAxj'
+                password 'KKnP3maIK3'
+            }
+            url 'https://repo.rdc.aliyun.com/repository/73792-release-PXkyIy/'
+        }
+        maven {
+            credentials {
+                username 'KwPAxj'
+                password 'KKnP3maIK3'
+            }
+            url 'https://repo.rdc.aliyun.com/repository/73792-snapshot-z4fvGZ/'
+        }
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.4.RELEASE")
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.12'
+    }
+}
+
+plugins {
+    //id "com.github.hierynomus.license" version "0.14.0"
+    id "net.saliman.properties" version "1.4.6"
+    id 'org.springframework.boot' version '2.2.4.RELEASE' apply false
+    id "io.spring.dependency-management" version "1.0.9.RELEASE" apply false
+//    id "com.google.protobuf" version "0.8.12" apply false
+}
+
+
+allprojects {
+    apply plugin: 'idea'
+    // apply plugin: 'com.github.hierynomus.license'
+    apply plugin: 'net.saliman.properties'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        jcenter()
+        maven { url "https://dl.bintray.com/graphql-java-kickstart/releases" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url 'https://repo.spring.io/plugins-release' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'http://uk.maven.org/maven2/' }
+        maven { url 'http://mirrors.ibiblio.org/pub/mirrors/maven2/' }
+        maven { url 'http://repository.jboss.org/nexus/content/groups/public' }
+        maven { url 'http://maven.oschina.net/content/groups/public/' }
+        maven { url 'http://maven.net.cn/content/groups/public/' }
+        maven { url 'https://repository.jboss.org/nexus/content/repositories/releases/' }
+
+        maven {
+            credentials {
+                username 'KwPAxj'
+                password 'KKnP3maIK3'
+            }
+            url 'https://repo.rdc.aliyun.com/repository/73792-release-PXkyIy/'
+        }
+        maven {
+            credentials {
+                username 'KwPAxj'
+                password 'KKnP3maIK3'
+            }
+            url 'https://repo.rdc.aliyun.com/repository/73792-snapshot-z4fvGZ/'
+        }
+        maven { url 'https://jitpack.io' }
+    }
+
+    // license {
+    //     header rootProject.file('codequality/LICENSE_HEADER')
+    //     strictCheck true
+    //     excludes([ "**/*.json", "**/*.html", "**/*.js", "**/*.css",  "**/*.map" ])
+    // }
+}
+
+subprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'maven'
+//    apply plugin: 'io.franzbecker.gradle-lombok'
+    apply plugin: 'io.spring.dependency-management'
+
+    compileJava {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        maven { url "https://dl.bintray.com/graphql-java-kickstart/releases" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url 'https://repo.spring.io/plugins-release' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'http://uk.maven.org/maven2/' }
+        maven { url 'http://mirrors.ibiblio.org/pub/mirrors/maven2/' }
+        maven { url 'http://repository.jboss.org/nexus/content/groups/public' }
+
+        maven {
+            credentials {
+                username 'KwPAxj'
+                password 'KKnP3maIK3'
+            }
+            url 'https://repo.rdc.aliyun.com/repository/73792-release-PXkyIy/'
+        }
+        maven {
+            credentials {
+                username 'KwPAxj'
+                password 'KKnP3maIK3'
+            }
+            url 'https://repo.rdc.aliyun.com/repository/73792-snapshot-z4fvGZ/'
+        }
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "com.netifi:netifi-bom:${netifiBomVersion}"
+            mavenBom "org.apache.logging.log4j:log4j-bom:${log4j2Version}"
+        }
+
+        dependencies {
+            dependency "com.netifi:netifi-spring-boot-starter:${netifiSpringVersion}"
+            dependency "com.google.protobuf:protobuf-java:${protobufVersion}"
+            dependency "com.google.protobuf:protoc:${protobufVersion}"
+            dependency "io.rsocket:rsocket-core:${rsocketVersion}"
+            dependency "io.rsocket:rsocket-transport-netty:${rsocketVersion}"
+            dependency "io.rsocket.rpc:rsocket-rpc-protobuf:${rsocketRpcVersion}"
+            dependency "io.rsocket.rpc:rsocket-rpc-core:${rsocketRpcVersion}"
+            dependency "com.graphql-java-kickstart:graphql-spring-boot-starter:${graphqlSpringBootStarterVersion}"
+            dependency "com.graphql-java-kickstart:altair-spring-boot-starter:${graphqlSpringBootStarterVersion}"
+            dependency "com.graphql-java-kickstart:graphiql-spring-boot-starter:${graphqlSpringBootStarterVersion}"
+            dependency "com.graphql-java-kickstart:voyager-spring-boot-starter:${graphqlSpringBootStarterVersion}"
+            dependency "com.graphql-java-kickstart:graphql-spring-boot-starter-test:${graphqlSpringBootStarterVersion}"
+            dependency "org.springframework.boot:spring-boot-configuration-processor:$LIB_SPRING_BOOT_VER"
+            dependency "io.dgraph:dgraph4j:${dgraph4jVersion}"
+            dependency 'org.antlr:ST4:4.3'
+            dependency 'com.github.kstyrc:embedded-redis:0.6'
+
+            dependency "io.jsonwebtoken:jjwt-api:${jsonwebtokenVersion}"
+            dependency "io.jsonwebtoken:jjwt-impl:${jsonwebtokenVersion}"
+            // Uncomment the next line if you want to use RSASSA-PSS (PS256, PS384, PS512) algorithms:
+            //'org.bouncycastle:bcprov-jdk15on:1.60',
+            // dependency 'io.jsonwebtoken:jjwt-jackson:0.11.1'
+            // or
+            dependency "io.jsonwebtoken:jjwt-gson:${jsonwebtokenVersion}" //for gson
+            // dependency 'com.shopify.graphql.support:support:0.2.0'
+
+            dependency "com.bdlbsc:dgraph-graphql:latest-SNAPSHOT"
+            dependency "io.cloudevents:cloudevents-api:${cloudeventsVersion}"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+[submodule "doper-graphql-gateway"]
+	path = doper-graphql-gateway
+	url = https://github.com/covid19angels/doper-graphql-gateway.git
+[submodule "kgis-datalake-dgraph"]
+	path = kgis-datalake-dgraph
+	url = https://github.com/covid19angels/kgis-datalake-dgraph.git

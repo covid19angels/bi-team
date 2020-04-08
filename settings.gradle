@@ -1,0 +1,15 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'bi-team'
+
+include ':doper-graphql-gateway'
+project(':doper-graphql-gateway').projectDir = new File(settingsDir, './doper-graphql-gateway')
+
+include ':kgis-datalake-dgraph'
+project(':kgis-datalake-dgraph').projectDir = new File(settingsDir, './kgis-datalake-dgraph')
+
