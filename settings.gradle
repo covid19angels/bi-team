@@ -13,3 +13,9 @@ project(':doper-graphql-gateway').projectDir = new File(settingsDir, './doper-gr
 include ':kgis-datalake-dgraph'
 project(':kgis-datalake-dgraph').projectDir = new File(settingsDir, './kgis-datalake-dgraph')
 
+include ':graphql-java-server-codegen'
+project(':graphql-java-server-codegen').projectDir = new File(settingsDir, './graphql-java-server-codegen')
+
+include ':graphql-java-server-codegen-gradle-plugin'
+project(':graphql-java-server-codegen-gradle-plugin').projectDir = new File(settingsDir, './graphql-java-server-codegen-gradle-plugin')
+

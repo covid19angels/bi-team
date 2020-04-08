@@ -4,9 +4,3 @@
 [submodule "kgis-datalake-dgraph"]
 	path = kgis-datalake-dgraph
 	url = https://github.com/covid19angels/kgis-datalake-dgraph.git
-[submodule "graphql-java-server-codegen"]
-	path = graphql-java-server-codegen
-	url = https://github.com/covid19angels/graphql-java-server-codegen.git
-[submodule "graphql-java-server-codegen-gradle-plugin"]
-	path = graphql-java-server-codegen-gradle-plugin
-	url = https://github.com/covid19angels/graphql-java-server-codegen-gradle-plugin.git

@@ -1,3 +1,5 @@
+# graphql-java-provider-codegen-gradle-plugin
+根据graphql endpoint、SDL、AST.json、@graphql注解的java类生成服务端POJO、Resovers、api等辅助java类gradle plugin
 
 # ui-team 
 ![Who owns BFF](document/WhoOwnsBFF.png)
