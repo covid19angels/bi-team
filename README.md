@@ -8,12 +8,12 @@
 # bi-team  
 ![Who owns BFF](document/WhoOwnsBFF2.png)
 ![Who owns BFF](document/WhoOwnsBFF1.png)
-- owns api, 
-- microservices 
-- repositories
+- 后端团队拥有并负责业务智能逻辑的api实现、微服务、数据存储、工作流等, 
+- 后端团队专注业务流程、系统安全、强壮性等的实现 
+- 后端团队关注数据完整性、关联性以满足各种前端团队需要实现的业务场景
 
 
-[Ok Google, how to add git submodule external library gradle android](https://medium.com/@alteromusica/git-submodule-gradle-shared-library-d40383403b59)
+# [Ok Google, how to add git submodule external library gradle android](https://medium.com/@alteromusica/git-submodule-gradle-shared-library-d40383403b59)
 
 1. 添加git submodule
 ```shell script
