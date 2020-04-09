@@ -42,7 +42,11 @@ project(':doper-graphql-gateway').projectDir = new File(settingsDir, './doper-gr
 include ':kgis-datalake-dgraph'
 project(':kgis-datalake-dgraph').projectDir = new File(settingsDir, './kgis-datalake-dgraph')
 
-
-
 ```
 
+# CloudEvents
+我们用cloudevents格式传值,所有系统的事件传递格式就有规范了
+- https://github.com/cloudevents/sdk-go/
+- https://github.com/alibaba/alibaba-rsocket-broker/blob/master/example/rsocket-requester/src/main/java/com/alibaba/spring/boot/rsocket/demo/OpsController.java
+- 阿里的rsocket broker https://github.com/alibaba/alibaba-rsocket-broker/releases
+基于标准的CloudEvents格式进行事件推送，同时增加了事件处理后回发确认的机制，方便进行数据验证
